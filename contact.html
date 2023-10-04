@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Retro Vintage Museum</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .section-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .section-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch; 
+        }
+
+        .section {
+            flex: 1;
+            padding: 20px;
+            margin: 0 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Adjustments for small screens */
+        @media screen and (max-width: 768px) {
+            .section-container {
+                flex-direction: column;
+            }
+
+            .section {
+                max-width: 100%;
+                margin: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 class="animated">Retro Vintage Museum</h1>
+    </header>
+    <nav class="nav">
+        <ul>
+            <li><a href="game.html">Game Lobby</a></li>
+            <li><a href="cars.html">Retro Cars</a></li>
+            <li><a href="computers.html">Retro Computers</a></li>
+            <li><a href="radios-telephones.html">Radios & Telephones</a></li>
+            <li><a href="cameras.html">Retro Cameras</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <div class="section-container">
+        <section class="section">
+            <h2 class="animated">Contact Us</h2>
+            <p class="animated">
+                Feel free to get in touch with us. If you have any questions or inquiries, you can contact us through the following information:
+            </p>
+            <div class="contact-info">
+                <p class="animated">
+                    <i class="fas fa-envelope"></i> Email: <a href="mailto:mildredmalope7@gmail.com">mildredmalope7@gmail.com</a>
+                </p>
+                <p class="animated">
+                    <i class="fas fa-phone"></i> Phone: +267 77134010
+                </p>
+                <p class="animated">
+                    <i class="fas fa-map-marker-alt"></i> Address: 77 Vintage Street, Nostalgia City, Retroland
+                </p>
+            </div>
+            <!-- Google Maps Location Reference -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.67890!2d-71.2085!3d46.7982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91fc281787d9b%3A0x5d28792765f99a07!2sRetro%20Vintage%20Museum!5e0!3m2!1sen!2sus!4v1649536831234!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+     
+        <section class="section">
+            <div class="contact-form">
+                <h3>Contact Form</h3>
+                
+                <form id="contact-form" action="submit_form.php" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit" class="button">Submit</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 Retro Vintage Museum. All rights reserved.</p>
+    </footer>
+</body>
+<script src="src/scriptfom.js"></script>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+    <link rel="stylesheet" href="src/style.css">
+    <style>
+        /* CSS for the game */
+        body {
+            background-color: #f2e5d9; 
+            font-family: 'RetroFont', sans-serif; 
+            text-align: center;
+        }
+
+        .game-container {
+            padding: 20px;
+            background-color: #f5deb3; /* Light brown */
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        #guess {
+            width: 80px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        #guess-btn {
+            background-color: #ffa500; /* Orange */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 class="animated">Retro Vintage Museum</h1>
+    </header>
+    <nav class="nav">
+        <ul>
+            <li><a href="game.html">Game Lobby</a></li>
+            <li><a href="cars.html">Retro Cars</a></li>
+            <li><a href="computers.html">Retro Computers</a></li>
+            <li><a href="radios-telephones.html">Radios & Telephones</a></li>
+            <li><a href="cameras.html">Retro Cameras</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+<p>Get to experience our museum games</p>
+    <div class="game-container">
+        <h1>Guess the Number Game</h1>
+        <p>Guess a number between 1 and 100:</p>
+        <input type="number" id="guess" min="1" max="100">
+        <button id="guess-btn" onclick="checkGuess()">Submit Guess</button>
+        <p id="result"></p>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 Retro Vintage Museum. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const minNumber = 1;
+        const maxNumber = 100;
+        const randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+        let attempts = 0;
+
+        function checkGuess() {
+            const guessInput = document.getElementById('guess');
+            const resultMessage = document.getElementById('result');
+            const userGuess = parseInt(guessInput.value);
+
+            if (isNaN(userGuess) || userGuess < minNumber || userGuess > maxNumber) {
+                resultMessage.textContent = 'Please enter a valid number between 1 and 100.';
+            } else {
+                attempts++;
+
+                if (userGuess === randomNumber) {
+                    resultMessage.textContent = `Congratulations! You guessed the number ${randomNumber} in ${attempts} attempts.`;
+                    guessInput.disabled = true;
+                } else if (userGuess < randomNumber) {
+                    resultMessage.textContent = 'Try a higher number.';
+                } else {
+                    resultMessage.textContent = 'Try a lower number.';
+                }
+            }
+
+            guessInput.value = '';
+        }
+    </script>
+</body>
+</html>
